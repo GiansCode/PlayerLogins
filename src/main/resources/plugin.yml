@@ -1,0 +1,6 @@
+name: PlayerLogins
+main: io.obadiah.pl.PlayerLogins
+version: 1.0-SNAPSHOT
+authors:
+  - Obadiah Crowe
+description: Adds logging capabilities to player login addresses
