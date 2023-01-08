@@ -1,9 +1,9 @@
-package io.obadiah.pl.storage;
+package io.obadiah.pl.common.storage;
 
 import com.google.common.collect.Sets;
-import io.obadiah.pl.PlayerLogins;
-import io.obadiah.pl.storage.data.PlayerData;
-import io.obadiah.pl.util.LoadableConfig;
+import io.obadiah.pl.common.PlayerLoginsCore;
+import io.obadiah.pl.common.storage.data.PlayerData;
+import io.obadiah.pl.common.util.LoadableConfig;
 
 import java.nio.file.Path;
 import java.util.Set;
@@ -29,7 +29,7 @@ public class PlayerStorage extends LoadableConfig<PlayerStorage> {
 
     @Override
     public Path getPath() {
-        return PlayerLogins.get().getPath().resolve("players.json");
+        return PlayerLoginsCore.getPath().resolve("players.json");
     }
 
     @Override

@@ -1,0 +1,7 @@
+last-ip-db-download: 0
+
+days-to-update-ip-db: 30
+
+ip-db-url: 'https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-Country&license_key={LICENSEKEY}&suffix=tar.gz'
+
+ip-db-license: 'keyhere'

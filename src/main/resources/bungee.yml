@@ -1,13 +1,9 @@
 name: PlayerLogins
-main: io.obadiah.pl.spigot.PlayerLogins
+main: io.obadiah.pl.bungee.PlayerLogins
 version: 1.0-SNAPSHOT
-api-version: 1.13
 authors:
   - Obadiah Crowe
   - minion325
 description: Adds logging capabilities to player login addresses
 softdepend:
   - Floodgate
-commands:
-  playerlogins:
-    usage: "/playerlogins"

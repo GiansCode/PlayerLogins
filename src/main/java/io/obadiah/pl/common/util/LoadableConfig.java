@@ -1,8 +1,8 @@
-package io.obadiah.pl.util;
+package io.obadiah.pl.common.util;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import io.obadiah.pl.PlayerLogins;
+import io.obadiah.pl.common.PlayerLoginsCore;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -43,7 +43,7 @@ public abstract class LoadableConfig<T> {
      */
     public LoadableConfig(Class<? extends LoadableConfig> clazz) {
         this.configurationClass = clazz;
-        this.logger = PlayerLogins.get().getLogger();
+        this.logger = PlayerLoginsCore.getLogger();
     }
 
     /**
@@ -86,8 +86,8 @@ public abstract class LoadableConfig<T> {
     public void save() {
         try {
             this.logger.info("Saving config, " + this.getClass().getSimpleName() + "..");
-            if (!Files.exists(PlayerLogins.get().getPath())) {
-                Files.createDirectory(PlayerLogins.get().getPath());
+            if (!Files.exists(PlayerLoginsCore.getPath())) {
+                Files.createDirectory(PlayerLoginsCore.getPath());
             }
 
             if (!Files.exists(this.getPath())) {
@@ -107,9 +107,9 @@ public abstract class LoadableConfig<T> {
      *
      * @return Loaded, generified, config.
      */
-    public static LoadableConfig<?> getByClass(Class<? extends LoadableConfig> clazz) {
+    public static <E extends LoadableConfig> LoadableConfig<E> getByClass(Class<E> clazz) {
         try {
-            return clazz.getConstructor().newInstance();
+            return (E) clazz.getConstructor().newInstance();
         } catch (IllegalAccessException | InstantiationException | NoSuchMethodException | InvocationTargetException e) {
             throw new RuntimeException("Error loading config, " + clazz.getSimpleName() + ": " + e);
         }

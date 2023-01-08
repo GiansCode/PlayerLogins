@@ -1,8 +1,8 @@
-package io.obadiah.pl.storage;
+package io.obadiah.pl.common.storage;
 
 import com.google.common.collect.Maps;
-import io.obadiah.pl.PlayerLogins;
-import io.obadiah.pl.util.LoadableConfig;
+import io.obadiah.pl.common.PlayerLoginsCore;
+import io.obadiah.pl.common.util.LoadableConfig;
 
 import java.nio.file.Path;
 import java.util.Map;
@@ -28,7 +28,7 @@ public class HostnameStorage extends LoadableConfig<HostnameStorage> {
 
     @Override
     public Path getPath() {
-        return PlayerLogins.get().getPath().resolve("hostnames.json");
+        return PlayerLoginsCore.getPath().resolve("hostnames.json");
     }
 
     @Override
