@@ -1,6 +1,6 @@
-package io.obadiah.pl.util;
+package io.obadiah.pl.spigot.listener;
 
-import io.obadiah.pl.PlayerLogins;
+import io.obadiah.pl.spigot.PlayerLogins;
 import org.bukkit.Bukkit;
 import org.bukkit.event.HandlerList;
 
